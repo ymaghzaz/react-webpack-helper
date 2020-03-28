@@ -1,7 +1,12 @@
+export const ActionType = {
+  INCREMENT: "increment",
+  DECREMENT: "decrement"
+};
+
 export const increment = () => {
-  return { type: "increment" };
+  return { type: ActionType.INCREMENT };
 };
 
 export const decrement = () => {
-  return { type: "decrement" };
+  return { type: ActionType.DECREMENT };
 };

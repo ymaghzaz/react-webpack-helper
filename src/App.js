@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-
+import withCounterModule from "./hooks/withCounterModule";
 const styles = {
   container: {
     width: "100%",
@@ -19,6 +19,7 @@ const styles = {
 };
 const App = () => {
   const [counter, setCounter] = useState(0);
+  withCounterModule(counter);
   return (
     <div>
       <h1>Hello from react webpack babel </h1>
@@ -38,7 +39,6 @@ const App = () => {
             setCounter(counter - 1);
           }}
         >
-          {" "}
           - 1
         </button>
       </div>

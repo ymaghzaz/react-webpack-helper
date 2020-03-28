@@ -1,0 +1,16 @@
+{
+  "name": "simple_html_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --watch"
+  },
+  "devDependencies": {
+    "@webpack-cli/init": "^0.3.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "webpack": "^4.42.1"
+  }
+}

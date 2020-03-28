@@ -8,7 +8,6 @@ import { AppContext } from "./context";
 const App = () => {
   const { state } = useContext(AppContext);
   const { counter } = state;
-  console.log("state", state);
   withCounterModule(counter);
   return (
     <div>
@@ -18,17 +17,4 @@ const App = () => {
   );
 };
 
-const Approot = () => {
-  const [state, dispatch] = useRedux();
-  return (
-    <AppContext.Provider
-      value={{
-        state,
-        dispatch
-      }}
-    >
-      <App />
-    </AppContext.Provider>
-  );
-};
-ReactDOM.render(<Approot />, document.querySelector("#root"));
+export default App;

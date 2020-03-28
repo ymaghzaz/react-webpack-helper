@@ -20,25 +20,21 @@ const styles = {
 const App = () => {
   const [counter, setCounter] = useState(0);
   withCounterModule(counter);
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+  const decrement = () => {
+    setCounter(counter - 1);
+  };
   return (
     <div>
       <h1>Hello from react webpack babel </h1>
       <div style={styles.container}>
         <h3> counter value : {counter}</h3>
-        <button
-          style={styles.button}
-          onClick={() => {
-            setCounter(counter + 1);
-          }}
-        >
+        <button style={styles.button} onClick={increment}>
           + 1
         </button>
-        <button
-          style={styles.button}
-          onClick={() => {
-            setCounter(counter - 1);
-          }}
-        >
+        <button style={styles.button} onClick={decrement}>
           - 1
         </button>
       </div>

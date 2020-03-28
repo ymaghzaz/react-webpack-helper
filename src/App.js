@@ -1,8 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello from react</h1>
+        <h1>Hello from react webpack babel </h1>
       </div>
     );
   }

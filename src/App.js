@@ -6,14 +6,14 @@ import Counter from "./components/Counter";
 import { AppContext } from "./context";
 
 const App = () => {
-  const { state, dispatch } = useContext(AppContext);
+  const { state } = useContext(AppContext);
   const { counter } = state;
   console.log("state", state);
   withCounterModule(counter);
   return (
     <div>
       <h1>Hello from react webpack babel </h1>
-      <Counter counter={counter} dispatch={dispatch} />
+      <Counter />
     </div>
   );
 };

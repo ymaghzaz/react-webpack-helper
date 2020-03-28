@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "webpack-dev-server --open --mode development",
     "build": "webpack --watch"
   },
   "devDependencies": {
@@ -15,6 +16,10 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^4.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "webpack": "^4.42.1"
   }
 }

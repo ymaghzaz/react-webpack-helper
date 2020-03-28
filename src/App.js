@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useReducer } from "react";
 import ReactDOM from "react-dom";
 import withCounterModule from "./hooks/withCounterModule";
+import { useRedux } from "./state/useRedux";
 const styles = {
   container: {
     width: "100%",
@@ -18,22 +19,8 @@ const styles = {
   }
 };
 
-const initState = {
-  counter: 0
-};
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "increment":
-      return { counter: state.counter + 1 };
-    case "decrement":
-      return { counter: state.counter - 1 };
-    default:
-      return state;
-  }
-};
-
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useRedux();
   const { counter } = state;
   withCounterModule(counter);
   const increment = () => {

@@ -1,53 +1,34 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import ReactDOM from "react-dom";
 import withCounterModule from "./hooks/withCounterModule";
 import { useRedux } from "./state/useRedux";
-import * as actions from "./state/actions";
-const styles = {
-  container: {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  button: {
-    margin: "1vw",
-    width: "5vw",
-    height: "4vh",
-    fontSize: "large"
-  }
-};
+import Counter from "./components/Counter";
+import { AppContext } from "./context";
 
 const App = () => {
-  const [state, dispatch] = useRedux();
+  const { state, dispatch } = useContext(AppContext);
   const { counter } = state;
+  console.log("state", state);
   withCounterModule(counter);
   return (
     <div>
       <h1>Hello from react webpack babel </h1>
-      <div style={styles.container}>
-        <h3> counter value : {counter}</h3>
-        <button
-          style={styles.button}
-          onClick={() => {
-            dispatch(actions.increment());
-          }}
-        >
-          + 1
-        </button>
-        <button
-          style={styles.button}
-          onClick={() => {
-            dispatch(actions.decrement());
-          }}
-        >
-          - 1
-        </button>
-      </div>
+      <Counter counter={counter} dispatch={dispatch} />
     </div>
   );
 };
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+const Approot = () => {
+  const [state, dispatch] = useRedux();
+  return (
+    <AppContext.Provider
+      value={{
+        state,
+        dispatch
+      }}
+    >
+      <App />
+    </AppContext.Provider>
+  );
+};
+ReactDOM.render(<Approot />, document.querySelector("#root"));

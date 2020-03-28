@@ -3,10 +3,5 @@ export const ActionType = {
   DECREMENT: "decrement"
 };
 
-export const increment = () => {
-  return { type: ActionType.INCREMENT };
-};
-
-export const decrement = () => {
-  return { type: ActionType.DECREMENT };
-};
+export const increment = () => ({ type: ActionType.INCREMENT });
+export const decrement = () => ({ type: ActionType.DECREMENT });

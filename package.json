@@ -19,6 +19,13 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
+  "prettier": {
+    "printWidth": 140,
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": false,
+    "bracketSpacing": true
+  },
   "dependencies": {
     "glob": "^7.1.6",
     "react": "^16.13.1",

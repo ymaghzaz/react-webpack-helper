@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
 const withCounterModule = counter => {
   useEffect(() => {
-    const module_n = counter % 2;
+    const module_n = counter % 2
     if (module_n === 0) {
-      console.log(`${counter} module 2 wow`);
+      console.log(`${counter} module 2 wow`)
     }
-  }, [counter]);
-};
+  }, [counter])
+}
 
-export default withCounterModule;
+export default withCounterModule

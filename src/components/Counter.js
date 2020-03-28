@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import * as actions from "../state/actions";
-import { AppContext } from "../context";
+import React, { useContext } from "react"
+import * as actions from "../state/actions"
+import { AppContext } from "../context"
 const styles = {
   container: {
     width: "100%",
@@ -16,18 +16,18 @@ const styles = {
     height: "4vh",
     fontSize: "large"
   }
-};
+}
 
 const Counter = () => {
-  const { state, dispatch } = useContext(AppContext);
-  const { counter } = state;
+  const { state, dispatch } = useContext(AppContext)
+  const { counter } = state
   return (
     <div style={styles.container}>
       <h3> counter value : {counter}</h3>
       <button
         style={styles.button}
         onClick={() => {
-          dispatch(actions.increment());
+          dispatch(actions.increment())
         }}
       >
         + 1
@@ -35,13 +35,13 @@ const Counter = () => {
       <button
         style={styles.button}
         onClick={() => {
-          dispatch(actions.decrement());
+          dispatch(actions.decrement())
         }}
       >
         - 1
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter

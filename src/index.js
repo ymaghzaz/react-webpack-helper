@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { useRedux } from "./state/useRedux";
-import { AppContext } from "./context";
-import App from "./App";
+import React from "react"
+import ReactDOM from "react-dom"
+import { useRedux } from "./state/useRedux"
+import { AppContext } from "./context"
+import App from "./App"
 
 const Root = () => {
-  const [state, dispatch] = useRedux();
+  const [state, dispatch] = useRedux()
   return (
     <AppContext.Provider
       value={{
@@ -15,6 +15,6 @@ const Root = () => {
     >
       <App />
     </AppContext.Provider>
-  );
-};
-ReactDOM.render(<Root />, document.querySelector("#root"));
+  )
+}
+ReactDOM.render(<Root />, document.querySelector("#root"))

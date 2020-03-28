@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import ReactDOM from "react-dom";
 import withCounterModule from "./hooks/withCounterModule";
 const styles = {
@@ -17,14 +17,30 @@ const styles = {
     fontSize: "large"
   }
 };
+
+const initState = {
+  counter: 0
+};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "increment":
+      return { counter: state.counter + 1 };
+    case "decrement":
+      return { counter: state.counter - 1 };
+    default:
+      return state;
+  }
+};
+
 const App = () => {
-  const [counter, setCounter] = useState(0);
+  const [state, dispatch] = useReducer(reducer, initState);
+  const { counter } = state;
   withCounterModule(counter);
   const increment = () => {
-    setCounter(counter + 1);
+    dispatch({ type: "increment" });
   };
   const decrement = () => {
-    setCounter(counter - 1);
+    dispatch({ type: "decrement" });
   };
   return (
     <div>
